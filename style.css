@@ -1,0 +1,330 @@
+:root {
+    --merah: #FF0000;
+    --putih: #FFFFFF;
+    --merah-tua: #B22222;
+    --merah-muda: #FFB6C1;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: var(--putih);
+    color: #333;
+}
+
+.navbar {
+    background-color: rgb(241, 108, 108);
+}
+.navbar-toggler {
+    background-color: #faf1f1; 
+    border: 1px solid #464444; 
+}
+.navbar-toggler-icon {
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30"%3E%3Cpath stroke="%23000" stroke-width="2" d="M4 6h22M4 15h22M4 24h22" /%3E%3C/svg%3E'); /* Mengubah warna icon garis menjadi hitam */
+}
+
+.navbar-brand, .nav-link {
+    color: var(--putih) !important;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-item .nav-link {
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--merah-muda) !important;
+}
+.carousel-item {
+    height: 70vh;
+}
+.carousel-image {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80%;
+    margin: auto;
+    bottom: 50%;
+    transform: translateY(50%);
+}
+.carousel-caption h5 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.carousel-caption p {
+    font-size: 1.2rem;
+}
+.carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 20px;
+}
+@media (max-width: 768px) {
+    .carousel-caption h5 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+}
+
+
+.section-title {
+    color: var(--merah);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--merah);
+    margin: 10px auto;
+}
+#intro {
+    background-color: #f8f9fa; /* Light background */
+}
+
+#intro h2 {
+    color: #343a40; /* Dark color for the title */
+}
+
+#intro p.lead {
+    font-size: 1.25rem; /* Slightly larger text for lead paragraph */
+    font-weight: 300;
+    color: #495057;
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    padding: 50px 0;
+}
+
+/* Timeline container */
+.timeline {
+    position: relative;
+    padding: 50px 0;
+}
+
+/* Vertical line in the middle */
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: var(--merah);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1px;
+}
+
+/* Timeline items */
+.timeline-item {
+    padding: 10px 20px;
+    position: relative;
+    background-color: inherit;
+    width: 100%; /* Default width for mobile */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Visible items */
+.timeline-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Circle at the center of timeline items */
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: var(--putih);
+    border: 4px solid var(--merah);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Left side items */
+.left {
+    left: 0;
+}
+
+/* Right side items */
+.right {
+    left: 50%;
+}
+
+/* Arrow on left side items */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid var(--merah);
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent var(--merah);
+}
+
+/* Arrow on right side items */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid var(--merah);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent var(--merah) transparent transparent;
+}
+
+/* Adjust the position of the circle for right items */
+.right::after {
+    left: -16px;
+}
+
+/* Card styling */
+.card {
+    transition: transform 0.3s;
+    border: 2px solid var(--merah);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    color: var(--merah);
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%; /* Full width on small screens */
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .timeline::before {
+        display: none; /* Hide vertical line on small screens */
+    }
+
+    .timeline-item::after {
+        display: none; /* Hide circles on small screens */
+    }
+
+    .left, .right {
+        left: 0; /* Align items to center on small screens */
+    }
+
+    .timeline-item::after {
+        right: auto; /* Adjust positioning of circles for small screens */
+        left: 50%;
+        margin-left: -12px;
+    }
+
+    .left::before, .right::before {
+        display: none; /* Remove arrows on small screens */
+    }
+}
+
+/* Styles for larger screens */
+@media (min-width: 769px) {
+    .timeline-item {
+        width: 50%; /* Set width to 50% for larger screens */
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        left: 50%;
+    }
+
+    .right::after {
+        left: -16px;
+    }
+
+    .timeline-item::after {
+        right: -17px; /* Reset circle position for larger screens */
+    }
+
+    .left::before, .right::before {
+        display: block; /* Ensure arrows are visible on larger screens */
+    }
+}
+
+
+#quiz {
+    background-color: var(--merah-muda);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: var(--merah);
+    border-color: var(--merah);
+}
+
+.btn-primary:hover {
+    background-color: var(--merah-tua);
+    border-color: var(--merah-tua);
+}
+
+.btn-floating {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 60px;
+    z-index: 1000;
+    background-color: var(--merah);
+    color: var(--putih);
+}
+
+.btn-floating:hover {
+    background-color: var(--merah-tua);
+    color: var(--putih);
+}
+
+footer {
+    background-color: var(--merah);
+    color: var(--putih);
+}
